@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import TiltCard from "@/app/TiltCard";
+import TiltCard from "@/components/TiltCard";
 
 const CTA = () => {
   const features = [
@@ -32,7 +32,7 @@ const CTA = () => {
           <h2 className="text-gray-800 sm:text-5xl font-semibold text-4xl pb-3">
             <span className="text-gradient">解决最后一公里问题</span>
           </h2>
-          <div className={"text-gray-600 text-lg"}>
+          <div className="text-gray-600 text-lg">
             <strong>繁杂的AI产品并不能便捷快速地解决"最后一公里"问题</strong>，
             <strong>Ghostie专注于工作场景下的具体末梢场景</strong>
           </div>
@@ -42,9 +42,7 @@ const CTA = () => {
             {features.map((item, idx) => (
               <TiltCard
                 key={idx}
-                className={
-                  "flex-1 flex bg-muted flex-col overflow-hidden justify-between rounded-xl aspect-[3/4] md:aspect-[2/3] h-auto"
-                }
+                className="flex-1 flex bg-muted flex-col overflow-hidden justify-between rounded-xl aspect-[3/4] md:aspect-[2/3] h-auto"
               >
                 <div className="flex-1 flex flex-col overflow-hidden justify-between rounded-xl aspect-[3/4] md:aspect-[2/3] h-auto">
                   <motion.div

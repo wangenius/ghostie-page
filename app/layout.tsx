@@ -6,7 +6,8 @@ import { Layout } from 'nextra-theme-docs';
 import { Banner, Head } from 'nextra/components';
 import { getPageMap } from 'nextra/page-map';
 import { ColorSchemeScript, mantineHtmlProps, MantineProvider } from '@mantine/core';
-import { MantineFooter, MantineNavBar } from '@/components';
+import { MantineFooter } from '@/components/MantineFooter/MantineFooter';
+import { MantineNavBar } from '@/components/MantineNavBar/MantineNavBar';
 import { theme } from '../theme';
 
 export const metadata = {

@@ -22,7 +22,7 @@ export const MantineNavBar = () => {
       <Navbar
         logo={
           <Group align="center" gap={4}>
-            <img src="/icon.svg" alt="Ghostie" width={32} height={32} className='mr-2' />
+            <img src="/icon.svg" alt="Ghostie" width={32} height={32} style={{ marginRight: '0.5rem' }} />
             <Text size="lg" fw={800}>
               Ghostie
             </Text>

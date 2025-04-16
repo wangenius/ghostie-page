@@ -1,6 +1,5 @@
 "use client";
 
-import Avatar from "boring-avatars";
 import { motion } from "framer-motion";
 
 const Testimonials = () => {
@@ -46,14 +45,6 @@ const Testimonials = () => {
               className="bg-card rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow"
             >
               <div className="flex items-center gap-4 mb-4">
-                <div className="shrink-0">
-                  <Avatar
-                    size={48}
-                    name={item.name + "xxx"}
-                    variant="beam"
-                    colors={["#FFB6C1", "#87CEEB", "#98FB98", "#DDA0DD", "#F0E68C"]}
-                  />
-                </div>
                 <div>
                   <h3 className="font-semibold text-lg">
                     {item.name}

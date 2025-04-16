@@ -2,6 +2,7 @@
 export default {
   content: [
     "./app/**/*.{js,jsx,ts,tsx,md,mdx}",
+    "./components/**/*.{js,jsx,ts,tsx,md,mdx}",
   ],
   darkMode: "class",
   theme: {

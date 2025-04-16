@@ -2,6 +2,9 @@
 
 @import 'nextra-theme-docs/dist/style.css' layer(theme);
 
+@import "tailwindcss/preflight";
+@tailwind utilities;
+
 /**
  * Custom styles
  *
