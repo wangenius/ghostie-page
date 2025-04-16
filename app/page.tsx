@@ -7,7 +7,6 @@ import ProductionDownload from '@/components/ProductionDownload';
 import Testimonials from '@/components/Testimonials';
 import ToolKit from '@/components/ToolKit';
 import { Welcome } from '@/components/Welcome/Welcome';
-import { Container } from '@mantine/core';
 import { motion } from 'framer-motion';
 import { PiBrain, PiGear, PiLightning, PiTree } from 'react-icons/pi';
 const philosophies = [
@@ -34,12 +33,9 @@ const philosophies = [
 ];
 export default function HomePage() {
   return (
-    <Container mih="calc(100vh - 328px)">
+    <>
       <Welcome />
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -left-1/2 -top-1/2 h-[200%] w-[200%] animate-[spin_20s_linear_infinite] rounded-full bg-gradient-to-r from-primary/5 to-transparent" />
-        <div className="absolute -right-1/2 -bottom-1/2 h-[200%] w-[200%] animate-[spin_20s_linear_infinite] rounded-full bg-gradient-to-l from-primary/5 to-transparent" />
-      </div>
+
       
       <Hero />
       <section className="py-16 relative overflow-hidden">
@@ -171,6 +167,6 @@ export default function HomePage() {
       <Testimonials />
       <ProductionDownload />
       <Footer />
-    </Container>
+      </>
   );
 }

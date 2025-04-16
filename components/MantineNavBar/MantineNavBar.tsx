@@ -1,36 +1,25 @@
 'use client';
 
-import { Group, Text } from '@mantine/core';
+import { PiDownload } from 'react-icons/pi';
 
-import '@mantine/core/styles.css';
-
-import { Navbar } from 'nextra-theme-docs';
-import { ColorSchemeControl } from '../ColorSchemeControl/ColorSchemeControl';
-import { MantineNextraThemeObserver } from '../MantineNextraThemeObserver/MantineNextraThemeObserver';
-
-/**
- * You can customize the Nextra NavBar component.
- * Don't forget to use the MantineProvider and MantineNextraThemeObserver components.
- *
- * @since 1.0.0
- *
- */
 export const MantineNavBar = () => {
+
+
+
   return (
-    <>
-      <MantineNextraThemeObserver />
-      <Navbar
-        logo={
-          <Group align="center" gap={4}>
+      <div className='flex justify-between items-center px-6 py-3 mt-3 max-w-[1200px] mx-auto absolute top-0 left-0 right-0 z-50'>
+        <a href='/' className='flex items-center gap-4 mr-auto cursor-pointer' >
             <img src="/icon.svg" alt="Ghostie" width={32} height={32} style={{ marginRight: '0.5rem' }} />
-            <Text size="lg" fw={800}>
+            <h2 className='text-2xl font-bold'>
               Ghostie
-            </Text>
-          </Group>
-        }
-      >
-          <ColorSchemeControl />
-      </Navbar>
-    </>
+            </h2>
+          </a>
+          <div className='flex items-center gap-4'>
+            <a href='/docs'>Documentation</a>
+            <a href='/docs'>
+              <PiDownload/>
+            </a>
+          </div>
+      </div>
   );
 };

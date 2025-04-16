@@ -2,13 +2,11 @@ import '@gfazioli/mantine-marquee/styles.layer.css';
 import '@mantine/core/styles.layer.css';
 import './global.css';
 
+import { MantineNavBar } from '@/components/MantineNavBar/MantineNavBar';
+import { ColorSchemeScript, mantineHtmlProps, } from '@mantine/core';
 import { Layout } from 'nextra-theme-docs';
 import { Banner, Head } from 'nextra/components';
 import { getPageMap } from 'nextra/page-map';
-import { ColorSchemeScript, mantineHtmlProps, MantineProvider } from '@mantine/core';
-import { MantineFooter } from '@/components/MantineFooter/MantineFooter';
-import { MantineNavBar } from '@/components/MantineNavBar/MantineNavBar';
-import { theme } from '../theme';
 
 export const metadata = {
   title: {
@@ -65,7 +63,6 @@ export default async function RootLayout({ children }: { children: any }) {
         />
       </Head>
       <body>
-        <MantineProvider theme={theme} defaultColorScheme="auto">
           <Layout
             banner={
               <Banner storageKey="mantine-nextjs-nextra">✨ version 1.6.x released 🎉, check it out! <a href="https://github.com/wangenius/ghostie-releases" target="_blank" rel="noopener noreferrer">Github</a></Banner>
@@ -73,12 +70,10 @@ export default async function RootLayout({ children }: { children: any }) {
             navbar={<MantineNavBar />}
             pageMap={pageMap}
             docsRepositoryBase="https://github.com/shuding/nextra/tree/main/docs"
-            footer={<MantineFooter />}
             sidebar={{ defaultMenuCollapseLevel: 1 }}
           >
             {children}
           </Layout>
-        </MantineProvider>
       </body>
     </html>
   );
