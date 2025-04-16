@@ -56,8 +56,8 @@ export default async function RootLayout({ children }: { children: any }) {
   return (
     <html lang="en" dir="ltr" {...mantineHtmlProps}>
       <Head>
-        <ColorSchemeScript nonce="8IBTHwOdqNKAWeKl7plt8g==" defaultColorScheme="dark" />
-        <link rel="shortcut icon" href="/favicon.svg" />
+        <ColorSchemeScript nonce="8IBTHwOdqNKAWeKl7plt8g==" defaultColorScheme="light" />
+        <link rel="shortcut icon" href="/icon.svg" />
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no"
@@ -67,7 +67,7 @@ export default async function RootLayout({ children }: { children: any }) {
         <MantineProvider theme={theme} defaultColorScheme="auto">
           <Layout
             banner={
-              <Banner storageKey="mantine-nextjs-nextra">✨ Mantine + NextJS + Nextra</Banner>
+              <Banner storageKey="mantine-nextjs-nextra">✨ version 1.6.x released 🎉, check it out! <a href="https://github.com/wangenius/ghostie-releases" target="_blank" rel="noopener noreferrer">Github</a></Banner>
             }
             navbar={<MantineNavBar />}
             pageMap={pageMap}

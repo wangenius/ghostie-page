@@ -6,7 +6,6 @@ import '@mantine/core/styles.css';
 
 import { Navbar } from 'nextra-theme-docs';
 import { ColorSchemeControl } from '../ColorSchemeControl/ColorSchemeControl';
-import { Logo } from '../Logo/Logo';
 import { MantineNextraThemeObserver } from '../MantineNextraThemeObserver/MantineNextraThemeObserver';
 
 /**
@@ -23,26 +22,14 @@ export const MantineNavBar = () => {
       <Navbar
         logo={
           <Group align="center" gap={4}>
-            <Logo />
-            <Text size="lg" fw={800} c="blue">
-              The Next Mantine Docs Builder
+            <img src="/icon.svg" alt="Ghostie" width={32} height={32} className='mr-2' />
+            <Text size="lg" fw={800}>
+              Ghostie
             </Text>
           </Group>
         }
-        // Mantine discord server
-        chatLink="https://discord.com/invite/wbH82zuWMN"
-        projectLink="https://github.com/gfazioli/next-app-nextra-template"
       >
-        <>
           <ColorSchemeControl />
-          <iframe
-            src="https://github.com/sponsors/gfazioli/button"
-            title="Sponsor gfazioli"
-            height="32"
-            width="114"
-            style={{ border: 0, borderRadius: '6px' }}
-          ></iframe>
-        </>
       </Navbar>
     </>
   );
