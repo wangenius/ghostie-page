@@ -32,8 +32,6 @@ const philosophies = [
 export default function HomePage() {
   return (
     <>
-
-      
       <Hero />
       <section className="py-16 relative overflow-hidden">
         <div className="container mx-auto px-4">

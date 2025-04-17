@@ -1,13 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { PiDownloadSimple, PiArrowRight } from "react-icons/pi";
+import { PiArrowRight, PiDownloadSimple } from "react-icons/pi";
 
-const GradientText = ({ children }: { children: React.ReactNode }) => (
-  <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/50">
-    {children}
-  </span>
-);
 
 const Hero = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -33,13 +28,12 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
             className="mb-6"
           >
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4">
-              <GradientText>Ghostie</GradientText>
-              <br />
-              <span className="text-3xl md:text-5xl lg:text-6xl">
+            <h1 className="text-[100px] font-bold mb-4">
+            Ghostie
+            </h1>
+            <span className="text-3xl md:text-5xl lg:text-6xl">
                 Desktop Agent Platform
               </span>
-            </h1>
           </motion.div>
 
           {/* 副标题 */}
