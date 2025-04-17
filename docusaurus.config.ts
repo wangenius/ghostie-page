@@ -71,6 +71,10 @@ const config: Config = {
         src: 'icon.svg',
       }
     },
+    footer: {
+      style: 'dark',
+    },
+    
     breadcrumbs: false,
     prism: {
       theme: prismThemes.github,

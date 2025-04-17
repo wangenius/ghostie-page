@@ -1,5 +1,5 @@
 ---
-title: Workflow Development
+title: Workflow
 order: 4
 ---
 
@@ -13,7 +13,7 @@ Workflow is an important component in Ghostie, used to implement complex process
 
 ### References
 
-All interface references use <span v-pre>`{{inputs.NODE_ID.result}}`</span> for referencing. This reference method can be used anywhere input strings are required (including code nodes).
+All interface references use `{{inputs.NODE_ID.result}}` for referencing. This reference method can be used anywhere input strings are required (including code nodes).
 
 ```plaintext
 {{inputs.XXXXX.result.data.name}}
@@ -33,7 +33,7 @@ Code reference:
 
 ```js
 // You can write code in a workflow node like this:
-const sum = inputs.start.query.number1 + inputs.xxxxx.result.number2;
+const sum = inputs.XXXXXX.query.number1 + inputs.xxxxx.result.number2;
 console.log("Calculation result:", sum);
 return sum;
 ```

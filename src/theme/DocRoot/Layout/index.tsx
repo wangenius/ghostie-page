@@ -24,6 +24,7 @@ export default function DocRootLayout({children}: Props): ReactNode {
         <DocRootLayoutMain hiddenSidebarContainer={hiddenSidebarContainer}>
           {children}
         </DocRootLayoutMain>
+        
       </div>
     </div>
   );

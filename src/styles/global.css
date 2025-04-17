@@ -101,3 +101,7 @@
   --color-sidebar-border: oklch(0.923 0.003 48.717);
   --color-sidebar-ring: oklch(0.709 0.01 56.259);
 }
+
+.theme-code-block-highlighted-line {
+  background-color: rgba(91, 92, 94, 0.1) !important;
+}

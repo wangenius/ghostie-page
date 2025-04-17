@@ -11,6 +11,7 @@ import Container from "@theme/CodeBlock/Container";
 import type { Props } from "@theme/CodeBlock/Content/String";
 import clsx from "clsx";
 import { Highlight, type Language } from "prism-react-renderer";
+import Line from "@theme/CodeBlock/Line";
 import React, {
   useCallback,
   useEffect,
@@ -21,7 +22,6 @@ import React, {
 
 import copy from "copy-text-to-clipboard";
 import { TbCheck, TbCopy } from "react-icons/tb";
-import Line from "../Line";
 // Prism languages are always lowercase
 // We want to fail-safe and allow both "php" and "PHP"
 // See https://github.com/facebook/docusaurus/issues/9012
@@ -140,7 +140,6 @@ export default function CodeBlockString({
                     getTokenProps={getTokenProps}
                     classNames={lineClassNames[i]}
                     showLineNumbers={showLineNumbers}
-                    lineNumber={i + 1}
                   />
                 ))}
               </code>

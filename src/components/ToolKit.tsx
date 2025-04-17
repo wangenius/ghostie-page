@@ -5,12 +5,12 @@ const ToolKit = () => {
     {
       title: (
         <h2>
-          <span className="text-gradient">多Agent协作系统</span>
+          <span className="text-gradient">Multi-Agent Collaboration System</span>
         </h2>
       ),
       desc: (
         <p className="text-muted-foreground text-lg leading-relaxed">
-          支持创建和管理多个AI助手，每个助手可以配置不同的模型和知识库。助手之间可以协同工作，自动分配任务，实现复杂工作流程的自动化执行。
+          Support the creation and management of multiple AI assistants, each assistant can configure different models and knowledge bases. Assistants can collaborate with each other, automatically assign tasks, and implement the automation of complex workflows.
         </p>
       ),
       img: (
@@ -19,8 +19,8 @@ const ToolKit = () => {
             className="w-full h-full object-cover"
             loading="lazy"
             decoding="async"
-            src={"img/multi-agent-system.png"}
-            alt="多Agent协作系统"
+            src={"multiAgent.png"}
+            alt="Multi-Agent Collaboration System"
           />
         </div>
       ),
@@ -28,12 +28,12 @@ const ToolKit = () => {
     {
       title: (
         <h2>
-          <span className="text-gradient">工作流引擎</span>
+          <span className="text-gradient">Workflow Engine</span>
         </h2>
       ),
       desc: (
         <p className="text-muted-foreground text-lg leading-relaxed">
-          可视化的工作流设计工具，支持条件分支、循环和错误处理。通过简单的拖拽操作，即可创建复杂的自动化工作流，让AI助手按照预设流程执行任务。
+          Visual workflow design tool, support conditional branches, loops and error handling. Through simple drag-and-drop operations, you can create complex automated workflows, so that the AI assistant can execute tasks according to the preset process.
         </p>
       ),
       img: (
@@ -42,8 +42,8 @@ const ToolKit = () => {
             className="w-full h-full object-cover"
             loading="lazy"
             decoding="async"
-            src={"img/workflow-engine.png"}
-            alt="工作流引擎"
+            src={"workflow-engine.png"}
+            alt="Workflow Engine"
           />
         </div>
       ),
@@ -51,20 +51,21 @@ const ToolKit = () => {
     {
       title: (
         <h2>
-          <span className="text-gradient">插件系统</span>
+          <span className="text-gradient">Plugin System & MCP support</span>
         </h2>
       ),
       desc: (
         <p className="text-muted-foreground text-lg leading-relaxed">
-          轻量级的插件开发框架，使用TypeScript即可快速开发插件。支持热重载，无需复杂的环境配置。内置插件市场，轻松扩展系统功能。
+          Lightweight plugin development framework, use TypeScript to quickly develop plugins. Support hot reloading, no complex environment configuration. Built-in plugin market, easily extend system functionality.
+          Support MCP, seamless integration of third-party services, quick extension of ecosystem capabilities, integration of various large models.
         </p>
       ),
       img: (
         <div className="relative overflow-hidden rounded-xl">
           <img
             className="w-full h-full object-cover shadow-lg"
-            src={"img/plugin-system.png"}
-            alt="插件系统"
+            src={"plugins.png"}
+            alt="Plugin System"
           />
         </div>
       ),
@@ -72,12 +73,12 @@ const ToolKit = () => {
     {
       title: (
         <h2>
-          <span className="text-gradient">知识库管理</span>
+          <span className="text-gradient">Knowledge Base Management</span>
         </h2>
       ),
       desc: (
         <p className="text-muted-foreground text-lg leading-relaxed">
-          支持多种格式的文档导入，自动解析和建立索引。实时更新知识库，智能检索和过滤。支持私有化部署，确保数据安全。
+          Support the import of documents in various formats, automatically parse and establish indexes. Real-time update of knowledge base, intelligent retrieval and filtering. Support private deployment, ensure data security.
         </p>
       ),
       img: (
@@ -86,23 +87,34 @@ const ToolKit = () => {
             className="w-full h-full object-cover"
             loading="lazy"
             decoding="async"
-            src={"img/knowledge-base.png"}
-            alt="知识库管理"
+            src={"knowledge.png"}
+            alt="Knowledge Base Management"
           />
         </div>
       ),
     },
   ];
   return (
-    <section id="toolkit" className="py-24 bg-gradient-to-b from-background to-muted/30">
+    <section
+      id="toolkit"
+      className="py-24 bg-gradient-to-b from-background to-muted/30"
+    >
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl font-bold tracking-tight mb-4">
-            <span className="text-gradient">强大而易用的工具集</span>
-          </h2>
-          <p className="text-xl text-muted-foreground">
-            Ghostie提供一套完整的工具，让AI真正服务于您的日常工作
-          </p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="text-center"
+          >
+            <span className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+              Modules
+            </span>
+            <div className="text-gray-600 text-lg">
+              Ghostie provides a complete set of modules to develop your own Agent crew
+            </div>
+          </motion.div>
         </div>
         <div className="space-y-24">
           {features.map((item, idx) => (
@@ -119,7 +131,11 @@ const ToolKit = () => {
                 </div>
                 {item.desc}
               </div>
-              <div className={`${idx % 2 === 0 ? "lg:order-2" : "lg:order-1"} bg-muted rounded-xl p-4`}>
+              <div
+                className={`${
+                  idx % 2 === 0 ? "lg:order-2" : "lg:order-1"
+                } bg-muted rounded-xl p-4`}
+              >
                 {item.img}
               </div>
             </motion.div>

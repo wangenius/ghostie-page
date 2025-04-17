@@ -107,7 +107,7 @@ export function HoverPopover({
           "!shadow-xl !shadow-indigo-900/10",
           "backdrop-blur-md !text-gray-100 rounded-xl",
           "before:absolute before:inset-0 before:rounded-xl before:p-[1px]",
-          "before:bg-gradient-to-r before:from-indigo-500/30 before:via-violet-500/30 before:to-indigo-500/30",
+          "before:bg-gradient-to-r before:from-primary/30 before:via-primary/30 before:to-primary/30",
           "before:-z-10 before:content-['']",
         );
     }
@@ -128,7 +128,7 @@ export function HoverPopover({
           {trigger}
           {variant === "elegant" && isOpen && (
             <div 
-              className="absolute inset-0 -z-10 opacity-20 blur-xl rounded-full bg-indigo-500/30"
+              className="absolute inset-0 -z-10 opacity-20 blur-xl rounded-full bg-primary/30"
               style={{
                 left: `${position.x - 25}px`,
                 top: `${position.y - 25}px`,
@@ -160,7 +160,7 @@ export function HoverPopover({
             >
               {content}
               {variant === "elegant" && (
-                <div className="absolute inset-0 rounded-xl border border-indigo-500/20 pointer-events-none" />
+                <div className="absolute inset-0 rounded-xl pointer-events-none" />
               )}
             </motion.div>
           </PopoverContent>

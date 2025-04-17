@@ -1,4 +1,3 @@
-
 import {
   PiRobot,
   PiDesktop,
@@ -10,120 +9,137 @@ import {
   PiPuzzlePiece,
 } from "react-icons/pi";
 import { motion } from "framer-motion";
+import { TbArrowRight } from "react-icons/tb";
 
 const Features = () => {
   const features = [
     {
       icon: <PiRobot size={28} />,
       title: "AI & Agent System",
+      color: "from-blue-500 to-blue-400",
       desc: (
         <span>
-          支持创建多个AI助手，<strong>独立配置不同模型</strong>
-          ，智能上下文管理，可自定义助手个性和行为，支持助手间协作。
+          support multiple AI assistants, <strong>independent configuration of different models</strong>
+          , intelligent context management, customizable assistant personality and behavior, support assistant collaboration.
         </span>
       ),
     },
     {
       icon: <PiDesktop size={28} />,
       title: "Desktop Integration",
+      color: "from-indigo-500 to-blue-500",
       desc: (
         <span>
-          完整的桌面系统访问权限，<strong>无缝集成本地环境</strong>
-          ，支持系统级自动化，原生文件系统集成，实现真正的桌面助手。
+          full desktop system access, <strong>seamless integration of local environment</strong>
+          , support system-level automation, native file system integration, achieve true desktop assistant.
         </span>
       ),
     },
     {
       icon: <PiPlugs size={28} />,
       title: "Plugin Architecture",
+      color: "from-cyan-500 to-blue-400",
       desc: (
         <span>
-          轻量级插件系统，支持<strong>TS快速开发插件</strong>
-          ，无需环境配置，插件市场，热重载，权限管理。
+          lightweight plugin system, support <strong>TS quick development of plugins</strong>
+          , no environment configuration, plugin market, hot reloading, permission management.
         </span>
       ),
     },
     {
       icon: <PiFlowArrow size={28} />,
       title: "Workflow Engine",
+      color: "from-emerald-500 to-teal-400",
       desc: (
         <span>
-          可视化工作流设计，<strong>多Agent协同工作</strong>
-          ，支持条件分支、循环和错误处理，自动化任务执行。
+          visual workflow design, <strong>multi-agent collaboration</strong>
+          , support conditional branches, loops, and error handling, automated task execution.
         </span>
       ),
     },
     {
       icon: <PiBooks size={28} />,
       title: "Knowledge Management",
+      color: "from-violet-600 to-purple-500",
       desc: (
         <span>
-          本地知识库管理，<strong>实时知识更新</strong>
-          ，支持多种格式，智能检索过滤，知识共享与同步。
+          local knowledge base management, <strong>real-time knowledge update</strong>
+          , support multiple formats, intelligent retrieval filtering, knowledge sharing and synchronization.
         </span>
       ),
     },
     {
       icon: <PiTarget size={28} />,
       title: "User Experience",
+      color: "from-fuchsia-500 to-pink-500",
       desc: (
         <span>
-          Alt+Space快捷唤醒，<strong>现代化UI设计</strong>
-          ，自动更新，跨平台一致性，极致性能体验。
+          Alt+Space shortcut to wake up, <strong>modern UI design</strong>
+          , automatic update, cross-platform consistency, excellent performance experience.
         </span>
       ),
     },
     {
       icon: <PiGlobe size={28} />,
-      title: "MCP Protocol Support",
+      title: "MCP Support",
+      color: "from-rose-500 to-red-500",
       desc: (
         <span>
-          完整支持MCP协议，<strong>无缝对接第三方服务</strong>
-          ，快速扩展生态能力，整合各类大模型。
+          full support for MCP protocol, <strong>seamless integration of third-party services</strong>
+          , quick extension of ecosystem capabilities, integration of various large models.
         </span>
       ),
     },
     {
       icon: <PiPuzzlePiece size={28} />,
       title: "Local Extension System",
+      color: "from-amber-500 to-orange-400",
       desc: (
         <span>
-          强大的本地扩展机制，<strong>支持自定义工具开发</strong>
-          ，无需云服务即可扩展功能，保护隐私数据。
+          powerful local extension mechanism, <strong>support custom tool development</strong>
+          , no cloud service, protect privacy data.
         </span>
       ),
     },
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-b from-background to-muted/50">
+    <section className="py-24 bg-gradient-to-b from-background to-muted/30 relative">
+      {/* 背景装饰 */}
+      <div className="absolute top-40 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute bottom-40 left-10 w-96 h-96 bg-secondary/5 rounded-full blur-3xl -z-10"></div>
+      
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold tracking-tight mb-4">
-            核心特性
-          </h2>
-          <p className="text-xl text-muted-foreground">
-            <strong>Ghostie</strong>
-            是下一代智能桌面生产力平台，为企业和AI超级个体打造的Agent工作空间。
-          </p>
-        </div>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true, margin: "-100px" }}
+          className="text-center mb-16"
+        >
+          <span className="text-4xl md:text-5xl font-bold tracking-tight mb-6">Features</span>
+
+        </motion.div>
+        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {features.map((item, idx) => (
             <motion.div
               key={idx}
-              initial={{ y: 20, opacity: 0 }}
+              initial={{ y: 40, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{
                 duration: 0.5,
                 delay: idx * 0.1,
               }}
-              className="group relative"
+              viewport={{ once: true, margin: "-50px" }}
+              className="group"
             >
-              <div className="h-full rounded-xl border bg-card p-6 shadow-lg transition-shadow hover:shadow-xl">
-                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+              <div className="h-full rounded-xl border bg-card/50 backdrop-blur-sm p-6 shadow-lg transition-all duration-300 
+                  hover:shadow-xl hover:border-primary/30 hover:scale-[1.02] hover:-translate-y-1">
+                <div className={`mb-5 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br ${item.color} text-white shadow-lg`}>
                   {item.icon}
                 </div>
-                <h3 className="mb-2 font-semibold tracking-tight text-xl">
+                <h3 className="mb-3 font-semibold tracking-tight text-xl group-hover:text-primary transition-colors">
                   {item.title}
                 </h3>
                 <p className="text-muted-foreground">
@@ -133,6 +149,22 @@ const Features = () => {
             </motion.div>
           ))}
         </div>
+        
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.5 }}
+          viewport={{ once: true, margin: "-100px" }}
+          className="flex justify-center mt-16"
+        >
+          <a 
+            href="/docs/features" 
+            className="flex !text-primary !no-underline items-center gap-2 px-6 py-3 rounded-full border border-primary/20 bg-primary/10 hover:bg-primary/20 transition-colors"
+          >
+            <span>View details and future plans</span>
+            <TbArrowRight />
+          </a>
+        </motion.div>
       </div>
     </section>
   );

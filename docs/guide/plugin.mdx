@@ -1,9 +1,9 @@
 ---
-title: Plugin Development
+title: Plugin
 order: 3
 ---
 
-# Plugin Development
+# Plugin
 
 > 💡 **Quick Development Tip**: You can use the Ghostie Plugin Development Assistant in the Agent Market to quickly develop plugins. This assistant can help you generate compliant plugin code and provide real-time code suggestions and error checking.
 
@@ -14,11 +14,11 @@ Plugins extend the capabilities of AI assistants.
 ## How to Develop
 
 1. Use TypeScript
-2. Use Deno runtime
+2. Use Node runtime
 
 ## Example
 
-```ts
+```ts {8,12}
 /**
  * @name Time Management Plugin
  * @description Provides functionality to get current time
@@ -26,20 +26,26 @@ Plugins extend the capabilities of AI assistants.
 
 // Parameter definition
 interface Params {
-  // Timezone, optional parameter
+  /* Timezone */
   timezone?: string;
 }
 
-/**
- * Get current time
- *
- * @param params - Object containing timezone parameter
- * @returns Returns string representation of current time
- */
+/* Get current time */
 export async function getCurrentTime(params: Params): Promise<string> {
   return new Date().toString();
 }
 ```
+
+:::warning
+
+- Highlight comments must be written, otherwise the Agent may not know the parameter meaning.
+- If it needs to be called by the Agent, it must be exported using `export`.
+- In the current version, it must be declared using `function`, not arrow functions.
+
+:::
+
+
+ 
 
 ## Plugin Development Guidelines
 
@@ -72,25 +78,7 @@ interface Params {
  * @returns Returns file content as string
  */
 export async function readTxtFile(params: Params): Promise<string> {
-  try {
-    // Check if parameters are correct
-    if (!params.filePath || typeof params.filePath !== "string") {
-      throw new Error("Invalid file path, please provide a correct file path.");
-    }
-    const homeDir = Deno.env.get("HOME") || Deno.env.get("USERPROFILE");
-    let path = `${homeDir}/Desktop/${params.filePath}`;
-    // Ensure file exists and read content
-    const fileInfo = await Deno.stat(path);
-    if (!fileInfo.isFile) {
-      throw new Error("The specified path is not a valid file.");
-    }
 
-    const fileContent = await Deno.readTextFile(path);
-    return fileContent;
-  } catch (error) {
-    console.error("Error occurred while reading file:", error);
-    throw error;
-  }
 }
 ```
 
@@ -101,5 +89,9 @@ You can set environment variables above the list in the plugin settings page.
 In code, call:
 
 ```ts
-Deno.env.get("GREETING");
+import dotenv from "dotenv";
+
+dotenv.config();
+
+const API_KEY = process.env.API_KEY;
 ```
