@@ -14,5 +14,4 @@ Ghostie is a light 是一个轻量级桌面智能体平台，为 GenAI 应用提
 
 我们邀请您探索 Ghostie 的世界，释放创造力，让 AI 为您的日常工作和生活带来便利。立即开始您的 Ghostie 之旅，一起探索 AI 的无限可能！
 
-查看我们的[入门指南](/start/intro)，[下载最新版本](https://github.com/wangenius/ghostie/releases)，或加入我们的[Discord 社区](https://discord.gg/gqC9SVY3zM)获取支持和分享经验。
 
