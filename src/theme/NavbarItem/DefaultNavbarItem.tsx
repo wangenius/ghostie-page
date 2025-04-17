@@ -5,6 +5,7 @@ import type {
   DesktopOrMobileNavBarItemProps,
   Props,
 } from '@theme/NavbarItem/DefaultNavbarItem';
+import { Button } from '@site/src/components/ui/button';
 
 function DefaultNavbarItemDesktop({
   className,
@@ -12,14 +13,14 @@ function DefaultNavbarItemDesktop({
   ...props
 }: DesktopOrMobileNavBarItemProps) {
   const element = (
-    <NavbarNavLink
-      className={clsx(
+    <Button variant="link" className={clsx(
         isDropdownItem ? 'dropdown__link' : 'navbar__item navbar__link',
         className,
+
       )}
-      isDropdownLink={isDropdownItem}
-      {...props}
-    />
+    >
+      {props.children}
+    </Button>
   );
 
   if (isDropdownItem) {

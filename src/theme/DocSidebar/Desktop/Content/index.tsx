@@ -45,7 +45,7 @@ export default function DocSidebarDesktopContent({
         styles.menu,
         showAnnouncementBar && styles.menuWithAnnouncementBar,
         className,
-        "bg-amber-100"
+        "!border-none"
       )}>
       <ul className={clsx(ThemeClassNames.docs.docSidebarMenu, 'menu__list')}>
         <DocSidebarItems items={sidebar} activePath={path} level={1} />

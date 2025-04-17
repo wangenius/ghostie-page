@@ -10,7 +10,7 @@ export default function NavbarMobileSidebarLayout({
 }: Props): ReactNode {
   const {shown: secondaryMenuShown} = useNavbarSecondaryMenu();
   return (
-    <div className="navbar-sidebar">
+    <div className="navbar-sidebar z-[1000] !bg-transparent">
       {header}
       <div
         className={clsx('navbar-sidebar__items', {

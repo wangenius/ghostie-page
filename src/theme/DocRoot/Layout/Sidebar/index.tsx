@@ -47,6 +47,7 @@ export default function DocRootLayoutSidebar({
         ThemeClassNames.docs.docSidebarContainer,
         styles.docSidebarContainer,
         hiddenSidebarContainer && styles.docSidebarContainerHidden,
+        "!border-none"
       )}
       onTransitionEnd={(e) => {
         if (!e.currentTarget.classList.contains(styles.docSidebarContainer!)) {
