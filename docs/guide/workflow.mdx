@@ -1,203 +1,51 @@
 ---
-title: 工作流指南
+title: Workflow Development
 order: 4
 ---
 
-# 工作流指南
+# Workflow
 
-## 工作流概述
+## What is a Workflow
 
-工作流是 Ghostie 中自动化任务处理的核心机制，它允许你：
+Workflow is an important component in Ghostie, used to implement complex processes.
 
-- 定义任务序列
-- 设置触发条件
-- 自动化执行
-- 监控和管理
+## Development
 
-## 工作流类型
+### References
 
-### 基础工作流
+All interface references use <span v-pre>`{{inputs.NODE_ID.result}}`</span> for referencing. This reference method can be used anywhere input strings are required (including code nodes).
 
-- 顺序执行
-- 条件分支
-- 循环处理
-- 错误处理
+```plaintext
+{{inputs.XXXXX.result.data.name}}
+// Reference the name property in the data property of the XXXXX node's result parameter
+// XXXXX is the ID of the node
+// result is the output endpoint of the node
+```
 
-### 高级工作流
+1. inputs indicates that the reference comes from an input endpoint
+2. The second position represents the ID of a node connecting to the input port
+3. The third position represents the nested property name of the JSON object in the node's outputs. The root is usually result, if it can't be retrieved, you can use a panel node to view it.
 
-- 并行执行
-- 事件驱动
-- 状态管理
-- 数据流转
+### Code Node
 
-### 集成工作流
+Code nodes use JavaScript for writing.
+Code reference:
 
-- API 调用
-- 服务集成
-- 数据同步
-- 外部触发
+```js
+// You can write code in a workflow node like this:
+const sum = inputs.start.query.number1 + inputs.xxxxx.result.number2;
+console.log("Calculation result:", sum);
+return sum;
+```
 
-## 工作流组件
+1. Use inputs directly in the code to get data from the input endpoints
+2. Support for using console.log to output logs
+3. Finally, you must call return to return the result.
 
-### 触发器
+### Other Nodes
 
-1. 时间触发
+Other nodes, such as: chat, agent, plugin, branch, iterator, code, panel, etc., all directly use data from input endpoints.
 
-   - 定时执行
-   - 周期执行
-   - 延迟执行
+For nodes like agent, plugin, chat, etc., the input is generally wrapped with result. So you need to use <span v-pre>`{{inputs.NODE_ID.result}}`</span> to reference it.
 
-2. 事件触发
-
-   - 系统事件
-   - 用户事件
-   - 自定义事件
-
-3. 条件触发
-   - 数据条件
-   - 状态条件
-   - 组合条件
-
-### 动作
-
-1. 基础动作
-
-   - 数据处理
-   - 状态更新
-   - 消息发送
-   - 文件操作
-
-2. 模型动作
-
-   - 模型调用
-   - 参数设置
-   - 结果处理
-   - 错误处理
-
-3. 知识库动作
-   - 知识检索
-   - 知识更新
-   - 知识验证
-   - 知识同步
-
-### 条件
-
-1. 数据条件
-
-   - 值比较
-   - 范围检查
-   - 类型验证
-   - 格式验证
-
-2. 状态条件
-
-   - 状态检查
-   - 状态转换
-   - 状态监控
-   - 状态恢复
-
-3. 组合条件
-   - 逻辑运算
-   - 条件嵌套
-   - 优先级
-   - 短路处理
-
-## 工作流设计
-
-### 流程设计
-
-1. 节点设计
-
-   - 节点类型
-   - 节点属性
-   - 节点连接
-   - 节点验证
-
-2. 连接设计
-
-   - 连接类型
-   - 连接条件
-   - 连接验证
-   - 连接优化
-
-3. 数据流设计
-   - 数据定义
-   - 数据转换
-   - 数据验证
-   - 数据存储
-
-### 错误处理
-
-- 异常捕获
-- 重试机制
-- 回滚处理
-- 错误通知
-
-## 工作流执行
-
-### 执行环境
-
-- 资源管理
-- 并发控制
-- 超时处理
-- 日志记录
-
-### 执行监控
-
-- 状态监控
-- 性能监控
-- 资源监控
-- 错误监控
-
-### 执行优化
-
-- 性能优化
-- 资源优化
-- 并发优化
-- 缓存优化
-
-## 工作流管理
-
-### 版本管理
-
-- 版本控制
-- 版本比较
-- 版本回滚
-- 版本发布
-
-### 权限管理
-
-- 访问控制
-- 操作权限
-- 数据权限
-- 审计日志
-
-### 部署管理
-
-- 环境配置
-- 依赖管理
-- 部署流程
-- 回滚机制
-
-## 最佳实践
-
-### 设计原则
-
-- 模块化
-- 可维护性
-- 可扩展性
-- 可测试性
-
-### 性能优化
-
-- 资源利用
-- 并发处理
-- 缓存策略
-- 监控告警
-
-### 安全考虑
-
-- 数据安全
-- 访问控制
-- 审计日志
-- 错误处理
+If you're not sure, you can use a panel node to view the output endpoint data of a certain node.

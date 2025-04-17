@@ -163,7 +163,7 @@ export default function Navbar(): ReactNode {
             }
             content={
               <>
-                <NavItem href="/docs/intro">Documentation</NavItem>
+                <NavItem href="/docs/introduction">Documentation</NavItem>
                 <NavItem href="/blog">Blog</NavItem>
               </>
             }

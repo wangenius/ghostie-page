@@ -25,7 +25,6 @@ export default function CollapseButton({onClick}: Props): ReactNode {
         styles.collapseSidebarButton,
       )}
       onClick={onClick}>
-      <IconArrow className={styles.collapseSidebarButtonIcon} />
     </button>
   );
 }
