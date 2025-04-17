@@ -1,56 +1,41 @@
-# Mantine Next.js + Nextra template
+# Website
 
+This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
-https://github.com/user-attachments/assets/9ed5f58c-cd3b-427e-ba6c-cdc4b7afd270
+### Installation
 
+```
+$ yarn
+```
 
-This is a template for [Next.js](https://nextjs.org/) app router + [Mantine](https://mantine.dev/) + [Nextra](https://nextra.site/) documentation site.
+### Local Development
 
-## Features
+```
+$ yarn start
+```
 
-This template comes with the following features:
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-- [PostCSS](https://postcss.org/) with [mantine-postcss-preset](https://mantine.dev/styles/postcss-preset)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Storybook](https://storybook.js.org/)
-- [Jest](https://jestjs.io/) setup with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
-- ESLint setup with [eslint-config-mantine](https://github.com/mantinedev/eslint-config-mantine)
-- Provides API example in `/api/version`
+### Build
 
-## Nextra Features
+```
+$ yarn build
+```
 
-- [Nextra](https://nextra.site/) documentation site with Mantine theme
-- Sync Dark mode between documentation and application (Mantine/Nextra)
-- Customizable components in `components` folder
-- Provides new Navigation and Footer components for Nextra documentation site
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
-## Folder structure
+### Deployment
 
-- `components` – shared components 
-    - you can use them in both documentation and application
-    - you may customize them to fit your needs
-- `content` – Nextra documentation site (.mdx and _meta.json files)
+Using SSH:
 
+```
+$ USE_SSH=true yarn deploy
+```
 
-## npm scripts
+Not using SSH:
 
-### Build and dev scripts
+```
+$ GIT_USER=<Your GitHub username> yarn deploy
+```
 
-- `dev` – start dev server
-- `build` – bundle application for production
-- `analyze` – analyzes application bundle with [@next/bundle-analyzer](https://www.npmjs.com/package/@next/bundle-analyzer)
-
-### Testing scripts
-
-- `typecheck` – checks TypeScript types
-- `lint` – runs ESLint
-- `prettier:check` – checks files with Prettier
-- `jest` – runs jest tests
-- `jest:watch` – starts jest watch
-- `test` – runs `jest`, `prettier:check`, `lint` and `typecheck` scripts
-
-### Other scripts
-
-- `storybook` – starts storybook dev server
-- `storybook:build` – build production storybook bundle to `storybook-static`
-- `prettier:write` – formats all files with Prettier
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
