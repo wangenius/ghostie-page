@@ -7,7 +7,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Ghostie',
   tagline: 'Desktop Agent Platform',
-  favicon: 'icon.svg',
+  favicon: 'icon-reverse.svg',
 
   // Set the production url of your site here
   url: 'https://ghostie.wangenius.com',
@@ -22,10 +22,6 @@ const config: Config = {
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
-
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
