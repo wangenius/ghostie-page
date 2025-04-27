@@ -95,3 +95,20 @@ dotenv.config();
 
 const API_KEY = process.env.API_KEY;
 ```
+
+
+## Plugin Get Database
+
+```ts
+
+const cookies = __DB__("xxxxxx",(item)=>{item.name === "xxxxxx"})
+
+```
+
+1. `xxxxxx` is the database name.
+2. `(item)=>{item.name === "xxxxxx"}` is the filter condition.
+3. `item` is the data object.
+4. `item.name` is the field name.
+5. `xxxxxx` is the value.
+
+
