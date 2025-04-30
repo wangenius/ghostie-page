@@ -112,3 +112,19 @@ const cookies = __DB__("xxxxxx",(item)=>{item.name === "xxxxxx"})
 5. `xxxxxx` is the value.
 
 
+## Plugin Develop
+
+1. you can edit the plugin in the plugins view.
+2. or you can open the plugin folder with vscode\cursor to edit.
+
+format is same, and you can add a `type.d.ts` file to declare the type.
+
+
+```ts title="type.d.ts"
+
+declare function __DB__(key: string, callback: (item: any) => boolean): any;
+declare function __IMAGE__(key: string): string;
+// ...
+
+```
+
