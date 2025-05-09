@@ -11,7 +11,7 @@ import NavbarMobileSidebar from "@theme/Navbar/MobileSidebar";
 import clsx from "clsx";
 import { ChevronDown } from "lucide-react";
 import { type ComponentProps, type ReactNode } from "react";
-import { TbBrandDiscordFilled } from "react-icons/tb";
+import { TbBrandDiscordFilled, TbBrandGithub } from "react-icons/tb";
 
 function NavItem({ href, children }: { href: string; children: ReactNode }) {
   return (
@@ -143,17 +143,28 @@ export default function Navbar(): ReactNode {
           
         </div>
         <div className="flex items-center gap-2">
-          <Button
-            className="group relative rounded-full"
+        <Button
+            className="group size-8 relative rounded-full"
             variant="secondary"
-            size="sm"
+            size="icon"
             onClick={() =>
               window.open("https://discord.gg/gqC9SVY3zM", "_blank")
             }
           >
             <TbBrandDiscordFilled className="w-6 h-6" />
-            <div className="text-sm font-medium">Discord</div>
           </Button>
+          <Button
+            className="group relative rounded-full"
+            variant="secondary"
+            size="sm"
+            onClick={() =>
+              window.open("https://github.com/wangenius/ghostie", "_blank")
+            }
+          >
+            <TbBrandGithub className="w-6 h-6" />
+            <div className="text-sm font-medium">Github</div>
+          </Button>
+        
         </div>
       </div>
       <NavbarBackdrop onClick={mobileSidebar.toggle} />
