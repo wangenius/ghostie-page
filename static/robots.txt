@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ghostie.wangenius.com/sitemap.xml 

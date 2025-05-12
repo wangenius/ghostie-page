@@ -3,7 +3,18 @@ import { PiArrowRight, PiHeart, PiUsers, PiHandshake, PiEnvelope } from "react-i
 
 export default function About() {
   return (
-    <Layout>
+    <Layout
+      title="关于我们 - Ghostie 桌面智能体平台"
+      description="了解 Ghostie 团队、使命与合作信息。Ghostie 是一个桌面智能体平台，助力高效工作与创新。"
+    >
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{
+        \"@context\": \"https://schema.org\",
+        \"@type\": \"Organization\",
+        \"name\": \"Ghostie\",
+        \"url\": \"https://ghostie.wangenius.com\",
+        \"logo\": \"https://ghostie.wangenius.com/icon.svg\",
+        \"description\": \"Ghostie 是一个桌面智能体平台，助力高效工作与创新。\"
+      }` }} />
       <div className="container mx-auto px-4 py-20">
         {/* 标题部分 */}
         <div className="text-center my-16">

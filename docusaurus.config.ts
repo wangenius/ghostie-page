@@ -58,8 +58,28 @@ const config: Config = {
     ],
   ],
 
+  plugins: [
+    [
+      '@docusaurus/plugin-sitemap',
+      {
+        changefreq: 'weekly',
+        priority: 0.5,
+        filename: 'sitemap.xml',
+      },
+    ],
+  ],
+
   themeConfig: {
     image: 'icon.svg',
+    metadata: [
+      {name: 'description', content: 'Ghostie 是一个桌面智能体平台，助力高效工作与创新。'},
+      {name: 'keywords', content: 'AI, 智能体, 桌面平台, Ghostie, 人工智能, 办公自动化'},
+      {property: 'og:title', content: 'Ghostie - Desktop Agent Platform'},
+      {property: 'og:description', content: 'Ghostie 是一个桌面智能体平台，助力高效工作与创新。'},
+      {property: 'og:image', content: 'https://ghostie.wangenius.com/icon.svg'},
+      {property: 'og:url', content: 'https://ghostie.wangenius.com'},
+      {name: 'twitter:card', content: 'summary_large_image'},
+    ],
     navbar: {
       title: 'Ghostie',
       logo: {
